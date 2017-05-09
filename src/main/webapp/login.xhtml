@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	>
+
+<h:head>
+	<title>Inicio</title>
+	<ui:include src="links.xhtml"/>
+</h:head>
+
+<h:body>
+	<ui:include src="header.xhtml"/>
+	<div class="container">
+		<h:panelGroup rendered="#{empty user}">
+			<div class="row">
+				<h:form styleClass="col s10 offset-s1">
+					
+					<div class="row">
+						<div class="input field col s10 offset-s1">
+							<h:inputText a:placeholder="Nombre de usuario" value="#{loginBean.username}" id="username" required="true" requiredMessage="Ingrese nombre de usuario " ></h:inputText>
+							<h:message for="username" />
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="input field col s10 offset-s1">
+							<h:inputSecret a:placeholder="Contraseña" value="#{loginBean.password}" id="password" required="true" requiredMessage="Ingrese una contraseña" ></h:inputSecret>
+							<h:message for="password" />
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="col s10 m4 offset-m5 offset-s1">
+							<h:commandButton action="#{loginBean.login}" value="Entrar" styleClass="waves-effect waves-light btn blue darken-2"></h:commandButton>
+						</div>
+					</div>
+				</h:form>
+			</div>
+			<div>
+				<h:messages globalOnly="true" />
+			</div>
+		</h:panelGroup>
+	</div>
+	<script src="js/scripts.js"></script>
+</h:body>
+</html>

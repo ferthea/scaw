@@ -1,0 +1,21 @@
+@CHARSET "ISO-8859-1";
+
+
+.tablaFormulario
+{
+	width:20%;
+	color:black;
+	background-color: inactivecaption;
+	border: 2px solid green;
+	margin-top: 2%;
+}
+
+.tablaPendientes
+{
+	width:100%;
+	text-align:center;
+	color:black;
+	background-color: inactivecaption;
+	border: 2px solid green;
+	margin-top: 2%;
+}

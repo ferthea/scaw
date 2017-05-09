@@ -1,0 +1,28 @@
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <nav>
+	    <div class="nav-wrapper blue darken-2">
+	      <div class="container">
+	      	<a href="#" class="brand-logo">Lista de tareas</a>
+		      <ul id="nav-mobile" class="right hide-on-med-and-down">
+		      	<h:panelGroup rendered="#{empty user}">
+		        	<li><a href="login.xhtml">Iniciar sesión</a></li>
+        			<li><a href="registro.xhtml">Crear cuenta</a></li>
+        			<li><a href="tareaspublicas.xhtml">Tareas públicas</a></li>
+		        </h:panelGroup>
+		        <h:panelGroup rendered="#{not empty user}">
+		        	<h:form>
+		        		<ul id="user-dropdown" class="dropdown-content">
+						  <h:commandLink style="color: black" value="Salir" action="#{loginBean.logout}" />
+						</ul>
+						<li><a class="dropdown-button" data-beloworigin="true" href="#!" data-activates="user-dropdown">#{user.username}<i class="material-icons right">arrow_drop_down</i></a></li>
+					</h:form>
+		        </h:panelGroup>
+		      </ul>
+	      </div>
+	    </div>
+	  </nav>
+</ui:composition>
